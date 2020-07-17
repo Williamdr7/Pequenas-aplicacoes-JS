@@ -30,9 +30,12 @@ function SendEmail() {
 async function send() {
     var id = await getId()
     var email = await findEmail(id)
-    var sen = await SendEmail().then(() => {
-        console.log("Success to send Email")
-    })
+    await SendEmail();
+    try {
+        console.log("Success")
+    } catch (erro) {
+        console.log(erro)
+    }
 
 }
 
